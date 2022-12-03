@@ -1,0 +1,10 @@
+
+
+  So we have completed all authenticate for admin and user , however user authenticate is not important 
+  but may be you need to know how user authenticate work.
+    the first step that you need to import project on your pc 
+     1: Install git.
+     2: Copy HTTPS code from github(HTTPS code located where link that you want to daownload zip file of this project).
+     3: Go to ht htdocs in to drive C and open the git.
+     4: Write these code into git(git clone link of HTTPS).
+     5: Open project from Vs code and run your project.
