@@ -7,4 +7,6 @@
      2: Copy HTTPS code from github(HTTPS code located where link that you want to daownload zip file of this project).
      3: Go to ht htdocs in to drive C and open the git.
      4: Write these code into git(git clone link of HTTPS).
-     5: Open project from Vs code and run your project.
+     5: Open project from Vs code and run composer update.
+     6: after that for generate key run php artisan generate:key.
+     7: at last run this command(php artisan serve) to run your project
