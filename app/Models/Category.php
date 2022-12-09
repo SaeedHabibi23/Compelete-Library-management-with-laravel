@@ -14,12 +14,12 @@ class Category extends Model
 
 
 
-    public static function getCategory(){
-        $records = DB::table('categories')->select(
-            'CategoryName' , 
-            'CategoryDescription' , 
-        )->get()->toArray();
+    // public static function getCategory(){
+    //     $records = DB::table('categories')->select(
+    //         'CategoryName' , 
+    //         'CategoryDescription' , 
+    //     )->get()->toArray();
 
-        return $records;
-    }
+    //     return $records;
+    // }
 }
