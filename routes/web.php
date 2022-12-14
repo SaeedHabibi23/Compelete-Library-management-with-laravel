@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 // use category controller here
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\BookController;
 
 
 /*
@@ -41,6 +42,17 @@ Route::group(['prefix' => 'admin' , 'middleware'=>['isAdmin' , 'auth', 'PreventB
     Route::post('/edit-category/{cat_id}', [CategoryController::class , 'edit'])->name('admin.edit-book');
     // This Roue is to update the form of any Category........................................
     Route::post('UpdateAnyOtherCategory', [CategoryController::class , 'update'])->name('admin.UpdateAnyOtherCategory');
+
+    // End of category section here............................................
+
+    // Start Book Section here.........................................................
+    
+    Route::get('Books', [BookController::class , 'Books'])->name('admin.Books');
+    Route::post('AdminStoreBook', [BookController::class , 'AdminStoreBook'])->name('admin.AdminStoreBook');
+    Route::delete('/delete-book/{book_id}', [BookController::class , 'destroyBook'])->name('admin.delete-book');
+    Route::post('edit-book/{book_id}', [BookController::class , 'edit'])->name('admin.edit-book');
+    Route::post('UpdateAnyOtherBook', [BookController::class , 'UpdateAnyOtherBook'])->name('admin.UpdateAnyOtherBook');
+
 
 });
 
