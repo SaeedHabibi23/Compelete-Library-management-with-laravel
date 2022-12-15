@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 // use category controller here
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\LendingBookController;
 
 
 /*
@@ -52,6 +53,18 @@ Route::group(['prefix' => 'admin' , 'middleware'=>['isAdmin' , 'auth', 'PreventB
     Route::delete('/delete-book/{book_id}', [BookController::class , 'destroyBook'])->name('admin.delete-book');
     Route::post('edit-book/{book_id}', [BookController::class , 'edit'])->name('admin.edit-book');
     Route::post('UpdateAnyOtherBook', [BookController::class , 'UpdateAnyOtherBook'])->name('admin.UpdateAnyOtherBook');
+
+
+
+// For LEnidng and delivery books
+    Route::get('deliveryBook', [LendingBookController::class , 'deliveryBook'])->name('admin.deliveryBook');
+    Route::get('giveDeliverBook', [LendingBookController::class , 'giveDeliverBook'])->name('admin.giveDeliverBook');
+    Route::post('giveDeliverToPerson', [LendingBookController::class , 'giveDeliverToPerson'])->name('admin.giveDeliverToPerson');
+    Route::post('role-update/{lending_id}', [LendingBookController::class , 'rollUpdate'])->name('admin.rollUpdate');
+    Route::post('role-updateLending/{lending_id}', [LendingBookController::class , 'updateDeliverBook'])->name('admin.role-updateLending');
+    Route::post('updateDeliverToPerson', [LendingBookController::class , 'updateDeliverToPerson'])->name('admin.updateDeliverToPerson');
+    Route::delete('delete-lending/{lending_id}', [LendingBookController::class , 'destroyLending'])->name('admin.delete-lending');
+ 
 
 
 });
